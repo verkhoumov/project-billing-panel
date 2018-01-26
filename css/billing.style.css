@@ -1,0 +1,869 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	border: none;
+	font: 400 14px 'PT Sans';
+	color: #bfd1dd;
+}
+
+body {
+	background-color: #455255;
+}
+
+.billing-error {
+	width: 100%;
+	font: 400 18px 'PT Sans';
+	color: #96AEB7;
+	border-radius: 0 0 15px 15px;
+	background-color: #657176;
+	text-align: center;
+	padding: 15px 0 17px 0;
+}
+
+/*
+ *	Подвал сайта всегда внизу.
+ */
+.page-wrapper {
+	width: 100%;
+	min-height: 100%;
+}
+
+.page-buffer {
+	height: 400px;
+	clear: both;
+}
+
+/*
+ *	Базовые отступы.
+ */
+.inner {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+/*
+ *	Шапка сайта.
+ */
+.header {
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background-color: #353e43;
+	display: inline-block;
+	z-index: 1000;
+}
+
+.header .logotype {
+	margin-top: 10px;
+}
+
+.userbar {
+	float: right;
+	margin-top: 2px;
+}
+
+.userbar .time {
+	font: 400 italic 16px 'PT Sans';
+	color: #6e7d81;
+	background-color: #455255;
+	padding: 7px 14px 8px 14px;
+	border-radius: 34px;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.userbar .partner {
+	font: 400 16px 'PT Sans';
+	color: #586a6e;
+	padding: 5px 14px 6px 14px;
+	border: 2px solid #3d484c;
+	border-radius: 34px;
+	display: inline-block;
+}
+
+/*
+ *	Пагинация.
+ */
+.paginator {
+	width: 100%;
+	border-top: 1px solid #627074;
+	padding: 14px 0;
+}
+
+.paginator .button {
+	margin: 0 14px;
+	display: block;
+	width: 46px;
+	height: 46px;
+	background: #bfd1dd url(/img/billing/arrow_left.png) 15px center no-repeat;
+	border-radius: 50%;
+	opacity: 0.7;
+	cursor: pointer;
+	position: relative;
+	z-index: 10;
+}
+
+.paginator .right {
+	float: right;
+	background: #bfd1dd url(/img/billing/arrow_right.png) 20px center no-repeat;
+}
+
+.paginator .button:hover {
+	opacity: 1;
+}
+
+.paginator div.button {
+	opacity: 0.3;
+	cursor: default;
+}
+
+.paginator div.button:hover {
+	opacity: 0.3;
+	cursor: default;
+}
+
+/*
+ *	Тело сайта.
+ */
+.content {
+	min-height: 100px;
+}
+
+.content > .inner {
+	padding-top: 60px;
+}
+
+/*
+ * Блоки со статистикой справа.
+ */
+.aside {
+	float: right;
+}
+
+.aside.center {
+	float: none;
+}
+
+.aside .block {
+	width: 280px;
+	min-height: 166px;
+	background-color: #3d474d;
+	border-radius: 8px;
+	margin-top: 23px;
+	display: inline-block;
+}
+
+.aside.center .block {
+	margin-top: 0;
+	width: 218px;
+}
+
+.aside.center .block ~ .block {
+	margin-left: 19px;
+}
+
+.aside .block.output {
+	background-color: #cf5a5a;
+}
+
+.aside .block.output .number {
+	color: #fff1f1;
+}
+
+.aside .block.output .about {
+	color: #F0A6A6;
+}
+
+.aside .block.input {
+	background-color: #65c178;
+}
+
+.aside .block.input .number {
+	color: #f0fff6;
+}
+
+.aside .block.input .about {
+	color: #b7e8cb;
+}
+
+.aside .block .number {
+	font: 400 60px 'PT Sans';
+	color: #bfd1dd;
+	text-align: right;
+	margin: 26px 16px 0 16px;
+	line-height: 54px;
+}
+
+.aside .block .about {
+	font: 400 italic 18px 'PT Sans';
+	color: #6d7a82;
+	text-align: right;
+	margin: 20px 20px 10px 20px;
+	line-height: 21px;
+}
+
+/*
+ *	Выплаты.
+ */
+.aside .block.checkout {
+	background-color: #bfd1dd;
+}
+
+.aside .block.checkout .title {
+	width: 100%;
+	height: 49px;
+	background-color: #afc2ce;
+	border-bottom: 1px solid #a2b2bd;
+	border-radius: 8px 8px 0 0;
+	display: inline-block;
+}
+
+.aside .block.checkout .title .count {
+	float: right;
+	font: 400 14px 'PT Sans';
+	color: #3d474d;
+	padding: 4px 10px 5px 10px;
+	background-color: #8da0ac;
+	border-radius: 28px;
+	display: inline-block;
+	margin: 12px 17px 0 0;
+}
+
+.aside .block.checkout .title .name {
+	font: 400 18px 'PT Sans';
+	color: #3d474d;
+	margin: 13px 0 0 17px;
+}
+
+.aside .block.checkout .check .column {
+	display: inline-block;
+}
+
+.aside .block.checkout .check {
+	width: 100%;
+	height: 47px;
+	display: inline-block;
+}
+
+.aside .block.checkout.admin .check {
+	height: 60px;
+}
+
+.aside .block.checkout .check .null {
+	font-style: italic;
+	margin: 0 16px;
+	padding-top: 14px;
+	color: #788B96;
+}
+
+.aside .block.checkout .check:nth-of-type(odd) {
+	background-color: #baccd8;
+}
+
+.aside .block.checkout .check .time, .aside .block.checkout .check .summ {
+	font: 400 13px 'PT Sans';
+	color: #3d474d;
+	padding: 2px 8px 3px 8px;
+	background-color: #a4b6c2;
+	border-radius: 22px;
+	display: inline-block;
+	margin-top: 12px;
+}
+
+.aside .block.checkout.admin .check .time, .aside .block.checkout.admin .check .summ {
+	margin-top: 4px;
+}
+
+.aside .block.checkout .check .user {
+	color: #748D9E;
+	margin: 5px 10px 0px 15px;
+	font-style: italic;
+}
+
+.aside .block.checkout .check a.delete {
+	display: block;
+	width: 13px;
+	height: 13px;
+	background: url(/img/billing/delete_small.png) no-repeat;
+	margin: 8px 15px 0px 15px;
+	float: right;
+	cursor: pointer;
+	opacity: 0.2;
+}
+
+.aside .block.checkout .check a.delete:hover {
+	opacity: 1;
+}
+
+.aside .block.checkout .check .summ {
+	color: #fff1f1;
+	background-color: #cf5a5a;
+	margin-right: 15px;
+}
+
+.aside .block.checkout.admin .check .summ {
+	color: #f0fff6;
+	background-color: #65c178;
+}
+
+.aside .block.checkout .check .clock {
+	margin: 9px 0 0 15px;
+	background: url(/img/billing/darktime.png) no-repeat;
+	display: inline-block;
+	padding-left: 26px;
+}
+
+.aside .block.checkout.admin .check .clock {
+	margin-top: 0px;
+}
+
+.aside .block.checkout .check .clock .time {
+	margin-top: 0px;
+}
+
+.aside .block.checkout .paginator {
+	border-top: 1px solid #afc1cd;
+}
+
+.aside .block.checkout .paginator .button {
+	background-color: #b1c3cf;
+}
+
+/*
+ *	Список заказов.
+ */
+.listing {
+	width: 700px;
+	background-color: #6e7d81;
+	margin-top: 23px;
+	border-radius: 8px;
+}
+
+.listing .column {
+	display: inline-block;
+}
+
+/*
+ *	Заголовки.
+ */
+.listing .title {
+	width: 100%;
+	height: 47px;
+	background-color: #768589;
+	border-radius: 8px 8px 0 0;
+	border-bottom: 1px solid #627074;
+}
+
+.listing .title ~ .title {
+	border-radius: 0;
+	border-top: 3px solid #455255;
+}
+
+.listing .title .time, .listing .title .count,
+.listing .title .summ {
+	font: 400 14px 'PT Sans';
+	color: #8b9b9f;
+	padding: 4px 10px 5px 10px;
+	background-color: #5e6b70;
+	border-radius: 28px;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.listing .title .time {
+	font: 400 italic 14px 'PT Sans';
+	margin-left: 12px;
+}
+
+.listing .title .count {
+	color: #bfd1dd;
+	background-color: #3d474d;
+}
+
+.listing .title .summ.output {
+	color: #fff1f1;
+	background-color: #cf5a5a;
+	margin-left: 20px;
+}
+
+.listing .title .summ.input {
+	color: #f0fff6;
+	background-color: #65c178;
+	margin-right: 12px;
+}
+
+/*
+ *	Информация о заказе.
+ */
+.listing .order {
+	width: 100%;
+	height: 40px;
+}
+
+.listing .order .null {
+	font-style: italic;
+	margin: 0 16px;
+	padding-top: 11px;
+	color: #8F9CA3;
+}
+
+.listing .order:nth-of-type(even) {
+	background-color: #6a797e;
+}
+
+.listing .order .time, .listing .order .type, .listing .order .host,
+.listing .order .count, .listing .order .summ {
+	font: 400 13px 'PT Sans';
+	color: #8b9b9f;
+	padding: 2px 8px 3px 8px;
+	background-color: #5e6b70;
+	border-radius: 22px;
+	display: inline-block;
+	margin-top: 9px;
+}
+
+.listing .order .type, .listing .order .host {
+	color: #5e6b70;
+	background-color: #9fafb8;
+}
+
+.listing .order .host {
+	max-width: 150px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.listing .order .type {
+	margin-right: 6px;
+}
+
+.listing .order .clock {
+	margin: 9px 0 0 12px;
+	background: url(/img/billing/time.png) no-repeat;
+	display: inline-block;
+	padding-left: 26px;
+}
+
+.listing .order .clock .time {
+	font: 400 italic 13px 'PT Sans';
+	margin-top: 0px;
+}
+
+.listing .order .count {
+	color: #bfd1dd;
+	background-color: #3d474d;
+}
+
+.listing .order .summ.output {
+	color: #fff1f1;
+	background-color: #cf5a5a;
+	margin-left: 20px;
+}
+
+.listing .order .summ.input {
+	color: #f0fff6;
+	background-color: #65c178;
+	margin-right: 12px;
+}
+
+/*
+ *	Подвал сайта.
+ */
+.footer {
+	width: 100%;
+	height: 300px;
+	margin-top: -300px;
+	background-color: #353e43;
+}
+
+.footer .logotype {
+	width: 63px;
+	height: 115px;
+	background: url(/img/billing/logotype.png) no-repeat;
+	margin-top: 93px;
+	display: inline-block;
+}
+
+.copyright {
+	vertical-align: top;
+	display: inline-block;
+	font-size: 14px;
+	color: #4e5c5f;
+	margin: 139px 0 0 25px;
+}
+
+.copyright a {
+	color: #4e5c5f;
+	text-decoration: underline;
+}
+
+.copyright a:hover {
+	color: #667578;
+	text-decoration: none;
+}
+
+/*
+ *	Админ-панель.
+ *	Зафиксировать выплату.
+ */
+.center {
+	width: 700px;
+	margin-top: 23px;
+}
+
+.side {
+	border-radius: 8px;
+	background-color: #bfd1dd;
+	padding-bottom: 1px;
+}
+
+.side .title {
+	width: 100%;
+	height: 49px;
+	background-color: #afc2ce;
+	border-bottom: 1px solid #a2b2bd;
+	border-radius: 8px 8px 0 0;
+	display: inline-block;
+}
+
+.side .title .name {
+	font: 400 18px 'PT Sans';
+	color: #3d474d;
+	margin: 13px 0 0 17px;
+}
+
+/*
+ *	Список партнёров.
+ */
+.side.partners-list {
+	margin-top: 23px;
+}
+
+.side.partners-list .column {
+	display: inline-block;
+}
+
+.side.partners-list .title .name {
+	font: 400 14px 'PT Sans';
+	color: #3d474d;
+	margin: 15px 0 0 0;
+}
+
+.side.partners-list .name.cols {
+	margin-left: 16px;
+}
+
+.side .list {
+	width: 100%;
+	height: 40px;
+}
+
+.side .list:nth-of-type(odd) {
+	background-color: #baccd8;
+}
+
+.side .list:last-of-type {
+	border-radius: 0 0 8px 8px;
+}
+
+.side .list .name, .side .list .boost_price.css, .side .list .checkin {
+	margin-left: 16px;
+}
+
+.side .list div div {
+	font: 400 13px 'PT Sans';
+	color: #3d474d;
+	padding: 2px 8px 3px 8px;
+	background-color: #a4b6c2;
+	border-radius: 22px;
+	display: inline-block;
+	margin-top: 9px;
+}
+
+.side .list .status {
+	width: 12px;
+	height: 12px;
+	padding: 0;
+	margin: 0;
+	margin-left: 6px;
+	background-color: #cf5a5a;
+	vertical-align: middle;
+}
+
+.side .list .status.online {
+	background-color: #65c178;
+}
+
+.side .list a.settings {
+	float: right;
+	display: block;
+	width: 16px;
+	height: 16px;
+	margin: 11px 16px 0 0;
+	background: url(/img/billing/edit.png) no-repeat;
+	opacity: 0.2;
+}
+
+.side .list a.settings:hover {
+	opacity: 0.5;
+}
+
+.side .list .checkin {
+	color: #f0fff6;
+	background-color: #65c178;
+}
+
+.side .list .percent {
+	color: #fff1f1;
+	background-color: #cf5a5a;
+}
+
+.side .list .null {
+	font-style: italic;
+	margin: 0 16px;
+	padding-top: 10px;
+	color: #788B96;
+}
+
+/*
+ *	Формы.
+ */
+.side .form {
+	margin: 15px 18px 22px 18px;
+}
+
+.side .field-line {
+	text-align: right;
+	width: 422px;
+	margin: 0 auto;
+}
+
+.side .field-line.edit {
+	text-align: left;
+}
+
+.side .field-line.delete {
+	text-align: left;
+	border-top: 1px solid #AFC2CE;
+	padding-top: 15px;
+}
+
+.side .field-line .field.back {
+	margin-left: 0;
+}
+
+.side .field-line .save {
+	float: right;
+}
+
+.side .field-line ~ .field-line {
+	margin-top: 14px;
+}
+
+.side .field {
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.side .field + .field {
+	margin-left: 20px;
+}
+
+.side .field-name {
+	color: #455255;
+}
+
+.side .field-form {
+	margin-top: 6px;
+}
+
+.side .field-description {
+	margin-top: 6px;
+	width: 175px;
+	color: #788B96;
+	font-style: italic;
+}
+
+.side .field-error {
+	width: 175px;
+	margin: 3px 0 5px 0;
+	color: #D73030;
+}
+
+select, input, .form .disabled-form, .form .checkin {
+	height: 34px;
+	width: 175px;
+	border-radius: 34px;
+	-moz-border-radius: 34px;
+	-webkit-border-radius: 34px;
+	border: none;
+	margin: 0;
+	padding: 0 12px;
+	background-color: #ECF4F9;
+	font: 400 14px 'PT Sans';
+	color: #455255;
+}
+
+.form .disabled-form, .form .checkin {
+	height: auto;
+	padding: 8px 12px;
+}
+
+.form .disabled-form {
+	background-color: #a4b6c2;
+	color: #3d474d;
+}
+
+.form .disabled-form.date {
+	font-style: italic;
+}
+
+.form .checkin {
+	background-color: #65c178;
+	color: #f0fff6;
+}
+
+select {
+	width: 199px;
+}
+
+.side .field-error + .field-form select,
+.side .field-error + .field-form input {
+	background-color: #EFABAB;
+	color: #932719;
+}
+
+.form button, .add-button a {
+	font: 400 15px 'PT Sans';
+	color: #f0fff6;
+	background-color: #65c178;
+	padding: 7px 14px 9px 14px;
+	border-radius: 34px;
+	-moz-border-radius: 34px;
+	-webkit-border-radius: 34px;
+	border: none;
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.form button:hover, .add-button a:hover {
+	background-color: #74d087;
+	text-shadow: 1px 1px 0px #65c178;
+}
+
+.form button:active, .add-button a:active {
+	color: #bceac6;
+	background-color: #56ae68;
+	text-shadow: 1px 1px 0px #469957;
+	box-shadow: 3px 3px 10px #469957 inset;
+}
+
+.side .field-line .back button {
+	color: #DBE7EF;
+	background-color: #97B2C3;
+}
+
+.side .field-line .back button:hover {
+	background-color: #a3bdcd;
+	text-shadow: 1px 1px 0px #97B2C3;
+}
+
+.side .field-line .back button:active {
+	color: #bfd1de;
+	background-color: #8ea8b9;
+	text-shadow: 1px 1px 0px #6b8698;
+	box-shadow: 3px 3px 10px #6b8698 inset;
+}
+
+.side .field-line.delete button {
+	color: #fff1f1;
+	background-color: #cf5a5a;
+}
+
+.side .field-line.delete button:hover {
+	background-color: #d96868;
+	text-shadow: 1px 1px 0px #cf5a5a;
+}
+
+.side .field-line.delete button:active {
+	color: #d19898;
+	background-color: #bc4848;
+	text-shadow: 1px 1px 0px #9d3131;
+	box-shadow: 3px 3px 10px #9d3131 inset;
+}
+
+.form-error {
+	padding: 10px;
+	background-color: #cf5a5a;
+	color: #fff1f1;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin-bottom: 15px;
+}
+
+.form-success {
+	padding: 10px;
+	background-color: #65c178;
+	color: #f0fff6;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin-bottom: 15px;
+}
+
+.aside .form-success {
+	border-radius: 0;
+	margin: 0;
+}
+
+/*
+ *	Смотреть страницу как.
+ */
+.userbar .watch, .userbar form, .userbar .field {
+	display: inline-block;
+}
+
+.userbar .watch {
+	color: #AFC2CE;
+}
+
+.userbar .field {
+	margin-left: 12px;
+}
+
+.userbar select {
+	width: 175px;
+	background-color: #BFD1DD;
+	color: #353E43;
+}
+
+/*
+ *	Кнопка "добавить партнёра".
+ */
+.add-button {
+	margin-top: 23px;
+}
+
+.add-button a {
+	padding: 7px 52px 9px 51px;
+}
+
+/*
+ *	График.
+ */
+.graph {
+	margin: 15px;
+}
+
+/*
+ *	Поиск.
+ */
+.search-result {
+	border-top: 1px solid #a4b6c2;
+}
